@@ -6,22 +6,37 @@ const loginInput = document.querySelector('#login');
 
 const result = document.querySelector('#result');
 
+const localStorageLog = document.querySelector('#local-storage-log');
+
 const generateIntraLogin = (value) => {
-	return ["abc", "def", "ghi"];
+	return "abc";
 }
 
 const handleClick = (e) => {
 	  e.preventDefault();
 
+	  const listValue = localStorage.getItem('list') ?? '[]';
+
+	  const list = JSON.parse(listValue);
+
+	  console.log(list);
+
 	  const { value } = loginInput;
 
-	  const names = generateIntraLogin(value);
+	  const newLogin = generateIntraLogin(value);
 
-	  names.map((name) => {
-		const li = document.createElement('li');
-		li.textContent = name;
-		result.appendChild(li);
-	  });
+	  result.innerHTML = `Your login is: ${newLogin}`;
+
+	  const newList = [...list, newLogin];
+
+	  localStorage.setItem('list', JSON.stringify(newList));
+
+	  localStorageLog.innerHTML = '';
+	  newList.map((login) => {
+		const item = document.createElement('li');
+		item.innerText = login;
+		localStorageLog.appendChild(item);
+	  });	  
 };
 
 btn.addEventListener('click', handleClick);
