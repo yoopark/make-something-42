@@ -1,0 +1,10 @@
+#container {
+	display: flex;
+	align-items: flex-start;
+	justify-content: center;
+}
+
+#local-storage-log {
+	max-height: 500px;
+	overflow-y: scroll;
+}

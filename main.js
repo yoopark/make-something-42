@@ -8,6 +8,8 @@ const result = document.querySelector('#result');
 
 const localStorageLog = document.querySelector('#local-storage-log');
 
+const clearStorageButton = document.querySelector('#clear-storage');
+
 const generateIntraLogin = (value) => {
 	const login = value.toLowerCase();
 	const strs = login.split(' ');
@@ -90,4 +92,23 @@ const handleClick = (e) => {
 	  return newLogin;
 };
 
+const handleClickStorageClearButton = (e) => {
+	e.preventDefault();
+	localStorage.clear();
+	localStorageLog.innerHTML = '';
+}
+
+const init = () => {
+	const listValue = localStorage.getItem('list') ?? '[]';
+	const list = JSON.parse(listValue);
+	list.map((login) => {
+		const item = document.createElement('li');
+		item.innerText = login;
+		localStorageLog.appendChild(item);
+	  });	
+}
+
+init();
+
 btn.addEventListener('click', handleClick);
+clearStorageButton.addEventListener('click', handleClickStorageClearButton);

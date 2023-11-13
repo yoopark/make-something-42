@@ -4,12 +4,18 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Intra Login Generator</title>
+	<link rel="stylesheet" href="./style.css">
 	<script defer src="./main.js"></script>
 </head>
 <body>
-	<input type="text" name="login" id="login" placeholder="Login" />
-	<button id="generate">Generate</button>
-	<p id="result"></p>
-	<ul id="local-storage-log"></ul>
+	<div id="container">
+		<main>
+			<input type="text" name="login" id="login" placeholder="Login" />
+			<button id="generate">Generate</button>	
+			<button id="clear-storage">Clear Storage</button>
+			<p id="result"></p>
+		</main>
+		<ul id="local-storage-log"></ul>
+	</div>
 </body>
 </html>
