@@ -1,10 +1,31 @@
 #container {
 	display: flex;
-	align-items: flex-start;
+	align-items: center;
 	justify-content: center;
+	height: 100vh; /* Adjust the height as needed */
+	background-color: #f0f0f0; /* Light gray background */
+  }
+ 
+main {
+	display: flex;
+	flex-direction: column;
 }
+  
+  #local-storage-log {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
 
-#local-storage-log {
-	max-height: 500px;
-	overflow-y: scroll;
-}
+	overflow-x: scroll;
+	column-gap: 50px;
+
+	height: 500px;
+	padding: 20px;
+	border: 1px solid #ccc; /* Light gray border */
+	border-radius: 8px; /* Rounded corners */
+	background-color: #fff; /* White background */
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Light box shadow */
+	width: 50%; /* Adjust the width as needed */
+	margin: 20px; /* Add margin for spacing */
+  }
+  
